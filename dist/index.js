@@ -7,7 +7,7 @@ const express_1 = __importDefault(require("express"));
 const validation_1 = require("./validation");
 const enum_1 = require("./enum");
 const app = (0, express_1.default)();
-const port = 3000;
+const port = 5000;
 const jsonBodyMiddleware = express_1.default.json();
 app.use(jsonBodyMiddleware);
 let db = [];

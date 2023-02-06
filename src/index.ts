@@ -3,7 +3,7 @@ import {Video, CreateVideoInputModel} from './interface';
 import {validateCreateVideoInputModel, validateUpdateVideoInputModel} from "./validation";
 import {Resolutions} from "./enum";
 const app = express();
-const port = 3000;
+const port = 5000;
 
 const jsonBodyMiddleware = express.json();
 app.use(jsonBodyMiddleware);
