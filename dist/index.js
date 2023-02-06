@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 app.get('/videos', (req, res) => {
     res.send(db);
 });
-app.get('/hometask_01/api/videos/:id', (req, res) => {
+app.get('/videos/:id', (req, res) => {
     const video = db.find(v => v.id === +req.params.id);
     if (video) {
         res.send(video);
@@ -40,7 +40,7 @@ app.get('/hometask_01/api/videos/:id', (req, res) => {
     }
     res.sendStatus(404);
 });
-app.post('/hometask_01/api/videos', (req, res) => {
+app.post('/videos', (req, res) => {
     const errors = (0, validation_1.validateCreateVideoInputModel)(req.body);
     if (errors) {
         res.status(400).send(errors);
@@ -50,7 +50,7 @@ app.post('/hometask_01/api/videos', (req, res) => {
     db.push(video);
     res.send(video);
 });
-app.put('/hometask_01/api/videos/:id', (req, res) => {
+app.put('/videos/:id', (req, res) => {
     const index = db.findIndex(p => p.id === +req.params.id);
     if (index === -1) {
         res.sendStatus(404);
@@ -70,11 +70,11 @@ app.put('/hometask_01/api/videos/:id', (req, res) => {
         publicationDate });
     res.sendStatus(204);
 });
-app.delete('/ht_01/api/testing/all-data', (req, res) => {
+app.delete('/testing/all-data', (req, res) => {
     db = [];
     res.sendStatus(204);
 });
-app.delete('/hometask_01/api/videos/:id', (req, res) => {
+app.delete('/videos/:id', (req, res) => {
     const index = db.findIndex(p => p.id === +req.params.id);
     if (index == -1) {
         res.sendStatus(404);
