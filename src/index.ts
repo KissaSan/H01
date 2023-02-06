@@ -33,6 +33,9 @@ function makeNewVideo(data: CreateVideoInputModel): Video {
     };
 }
 
+app.get('/', (req, res) => {
+    res.send('hello')
+})
 app.get('/hometask_01/api/videos', (req, res) => {
     res.send(db);
 })
