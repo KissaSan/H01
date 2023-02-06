@@ -1,6 +1,7 @@
 import express from 'express';
 import {Video, CreateVideoInputModel} from './interface';
 import {validateCreateVideoInputModel, validateUpdateVideoInputModel} from "./validation";
+import {Resolutions} from "./enum";
 const app = express();
 const port = 3000;
 
@@ -34,7 +35,8 @@ function makeNewVideo(data: CreateVideoInputModel): Video {
 }
 
 app.get('/', (req, res) => {
-    res.send('hello')
+    console.log(Resolutions["P144"])
+    res.send("hello")
 })
 app.get('/videos', (req, res) => {
     res.send(db);

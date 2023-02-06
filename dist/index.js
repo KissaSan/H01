@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const validation_1 = require("./validation");
+const enum_1 = require("./enum");
 const app = (0, express_1.default)();
 const port = 3000;
 const jsonBodyMiddleware = express_1.default.json();
@@ -27,7 +28,8 @@ function makeNewVideo(data) {
     };
 }
 app.get('/', (req, res) => {
-    res.send('hello');
+    console.log(enum_1.Resolutions["P144"]);
+    res.send("hello");
 });
 app.get('/videos', (req, res) => {
     res.send(db);

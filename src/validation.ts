@@ -149,7 +149,7 @@ function validateAvailableResolutions(availableResolutions: any): FieldError | n
         };
     }
 
-    if (availableResolutions.every(r => Resolutions[r])) {
+    if (availableResolutions.every(r => Resolutions[r] !== undefined)) {
         return null;
     } else {
         return {

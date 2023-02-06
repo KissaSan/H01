@@ -118,7 +118,7 @@ function validateAvailableResolutions(availableResolutions) {
             message: "availableResolutions must be array of strings "
         };
     }
-    if (availableResolutions.every(r => enum_1.Resolutions[r])) {
+    if (availableResolutions.every(r => enum_1.Resolutions[r] !== undefined)) {
         return null;
     }
     else {
