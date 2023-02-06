@@ -63,7 +63,7 @@ app.post('/videos', (req , res) => {
 
     const video = makeNewVideo(req.body);
     db.push(video);
-    res.send(video);
+    res.status(201).send(video);
 })
 
 app.put('/videos/:id', (req, res) => {
