@@ -29,7 +29,7 @@ function makeNewVideo(data) {
 app.get('/', (req, res) => {
     res.send('hello');
 });
-app.get('/hometask_01/api/videos', (req, res) => {
+app.get('/videos', (req, res) => {
     res.send(db);
 });
 app.get('/hometask_01/api/videos/:id', (req, res) => {
